@@ -28,7 +28,7 @@ namespace OkayuLoader.Pages
             else { SettingsCardOsu.Description = uiConfig.customOsuPath; }
             if (uiConfig.customPatcherPath == "")
             {
-                SettingsCardPatcher.Description = "Not initializated!";
+                TextBlockPatcherPath.Text = "Not initializated!";
             }
             else { SettingsCardPatcher.Description = uiConfig.customPatcherPath; }
 
@@ -68,7 +68,7 @@ namespace OkayuLoader.Pages
 
             if (folder != null)
             {
-                SettingsCardPatcher.Description = folder.Path;
+                TextBlockPatcherPath.Text = folder.Path;
                 uiConfig.customPatcherPath = folder.Path;
                 configService.Save(uiConfig);
             }

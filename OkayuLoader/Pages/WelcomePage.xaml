@@ -25,7 +25,6 @@
                             Click="ButtonSelectOsuHandler"/>
             </controls:SettingsCard>
             <controls:SettingsCard Header="Osu! patcher path"
-                       Description="You can choose path to osu!pacther folder"
                        HeaderIcon="{ui:FontIcon Glyph=&#xE950;}"
                        IsEnabled="True"
                        x:Name="SettingsCardPatcher">
@@ -33,9 +32,15 @@
                             Content="Select"
                             IsEnabled="True"
                             Click="ButtonSelectPatcherHandler"/>
+                <controls:SettingsCard.Description>
+                    <StackPanel>
+                        <TextBlock x:Name="TextBlockPatcherPath" Grid.Column="0" />
+                        <HyperlinkButton Content="Download" NavigateUri="https://osuokayu.moe/static/Osu!Patcher.zip" Grid.Row="0" Grid.Column="1" />
+                    </StackPanel>
+                </controls:SettingsCard.Description>
             </controls:SettingsCard>
 
-            <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Text="Account" Margin="0,0,0,6"/>
+            <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Text="Account" Margin="0,2,0,6"/>
 
             <controls:SettingsCard Header="Username"
                                    Description="Enter your account username"
