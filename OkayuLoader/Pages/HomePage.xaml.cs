@@ -46,6 +46,7 @@ namespace OkayuLoader.Pages
             ButtonPlay.Content = "Starting osu!...";
             ButtonPlay.IsEnabled = false;
             string osuFolderPath = uiConfig.customOsuPath;
+            string userFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             string username = Environment.UserName;
 
             if (uiConfig.useAutoLogin) { fileEditTool.ChangeAccountForOsu((osuFolderPath + "\\osu!." + username + ".cfg"), uiConfig.username, uiConfig.password); }
@@ -61,7 +62,7 @@ namespace OkayuLoader.Pages
             {
                 await Task.Delay(2000);
                 var patcherProcessHandler = new Process();
-                patcherProcessHandler.StartInfo.FileName = uiConfig.customPatcherPath + "\\osu!.patcher.exe";
+                patcherProcessHandler.StartInfo.FileName = userFolderPath + "\\.OkayuLoader\\Osu!Patcher\\osu!.patcher.exe";
                 patcherProcessHandler.Start();
             }
 

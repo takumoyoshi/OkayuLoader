@@ -19,25 +19,10 @@
                                        HeaderIcon="{ui:FontIcon Glyph=&#xF12B;}"
                                        IsEnabled="True"
                                        x:Name="SettingsCardOsu">
-            <Button x:Name="ButtonSelectOsu"
+                <Button x:Name="ButtonSelectOsu"
                             Content="Select"
                             IsEnabled="True"
                             Click="ButtonSelectOsuHandler"/>
-            </controls:SettingsCard>
-            <controls:SettingsCard Header="Osu! patcher path"
-                       HeaderIcon="{ui:FontIcon Glyph=&#xE950;}"
-                       IsEnabled="True"
-                       x:Name="SettingsCardPatcher">
-                <Button x:Name="ButtonSelectPacther"
-                            Content="Select"
-                            IsEnabled="True"
-                            Click="ButtonSelectPatcherHandler"/>
-                <controls:SettingsCard.Description>
-                    <StackPanel>
-                        <TextBlock x:Name="TextBlockPatcherPath" Grid.Column="0" />
-                        <HyperlinkButton Content="Download" NavigateUri="https://osuokayu.moe/static/Osu!Patcher.zip" Grid.Row="0" Grid.Column="1" />
-                    </StackPanel>
-                </controls:SettingsCard.Description>
             </controls:SettingsCard>
 
             <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Text="Account" Margin="0,2,0,6"/>
@@ -52,7 +37,7 @@
                        Description="Enter yout password for account"
                        HeaderIcon="{ui:FontIcon Glyph=&#xE8D7;}"
                        IsEnabled="True">
-                <PasswordBox x:Name="PasswordBoxAccount" MinWidth="200" PlaceholderText="Passowrd" PasswordChanged="TextBoxPasswordHandler"/>
+                <PasswordBox x:Name="PasswordBoxAccount" MinWidth="200" PlaceholderText="Password" PasswordChanged="TextBoxPasswordHandler"/>
             </controls:SettingsCard>
         </StackPanel>
 

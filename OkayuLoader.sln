@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OkayuLoader", "OkayuLoader\OkayuLoader.csproj", "{8E1F5C2B-B108-4682-873F-C3B7B7BABE31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OkayuLoader", "OkayuLoader\OkayuLoader.csproj", "{8E1F5C2B-B108-4682-873F-C3B7B7BABE31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E43E6EC7-9BB8-4D31-97B1-2A222A6EB58F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -26,11 +26,6 @@ namespace OkayuLoader.Pages
                 SettingsCardOsu.Description = "Not initializated!";
             }
             else { SettingsCardOsu.Description = uiConfig.customOsuPath; }
-            if (uiConfig.customPatcherPath == "")
-            {
-                SettingsCardPatcher.Description = "Not initializated!";
-            }
-            else { SettingsCardPatcher.Description = uiConfig.customPatcherPath; }
 
             TextBoxAccount.Text = uiConfig.username;
             PasswordBoxAccount.Password = uiConfig.password;
@@ -53,24 +48,6 @@ namespace OkayuLoader.Pages
             { 
                 SettingsCardOsu.Description = folder.Path;
                 uiConfig.customOsuPath = folder.Path;
-                configService.Save(uiConfig);
-            }
-        }
-
-        private async void ButtonSelectPatcherHandler(object sender, RoutedEventArgs e)
-        {
-            FolderPicker folderPicker = new();
-            folderPicker.FileTypeFilter.Add("*");
-
-            IntPtr hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.m_window);
-            WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
-
-            StorageFolder folder = await folderPicker.PickSingleFolderAsync();
-
-            if (folder != null) 
-            { 
-                SettingsCardPatcher.Description = folder.Path;
-                uiConfig.customPatcherPath = folder.Path;
                 configService.Save(uiConfig);
             }
         }

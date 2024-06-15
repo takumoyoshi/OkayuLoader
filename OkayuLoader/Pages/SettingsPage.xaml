@@ -25,16 +25,6 @@
                             IsEnabled="True"
                             Click="ButtonSelectOsuHandler"/>
                 </controls:SettingsCard>
-                <controls:SettingsCard Header="Osu! patcher path"
-                       Description="You can choose path to osu!pacther folder"
-                       HeaderIcon="{ui:FontIcon Glyph=&#xE950;}"
-                       IsEnabled="True"
-                       x:Name="SettingsCardPatcher">
-                    <Button x:Name="ButtonSelectPacther"
-                            Content="Select"
-                            IsEnabled="True"
-                            Click="ButtonSelectPatcherHandler"/>
-                </controls:SettingsCard>
 
                 <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Text="Account" Margin="0,2,0,6"/>
                 
@@ -48,7 +38,7 @@
                                        Description="Enter yout password for account"
                                        HeaderIcon="{ui:FontIcon Glyph=&#xE8D7;}"
                                        IsEnabled="True">
-                    <PasswordBox x:Name="PasswordBoxAccount" MinWidth="200" PlaceholderText="Passowrd" PasswordChanged="TextBoxPasswordHandler"/>
+                    <PasswordBox x:Name="PasswordBoxAccount" MinWidth="200" PlaceholderText="Password" PasswordChanged="TextBoxPasswordHandler"/>
                 </controls:SettingsCard>
 
                 <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Text="User config" Margin="0,2,0,6"/>
@@ -73,7 +63,7 @@
                 <controls:SettingsExpander Header="Okayu Loader" 
                                            Description="© Artem Klonerovsky. GPL-3.0 license."
                                            HeaderIcon="{ui:BitmapIcon Source=ms-appx:///Assets/StoreLogo.png}">
-                    <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="Version 1.0.2" />
+                    <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="Version 1.1.0" />
                     <controls:SettingsExpander.Items>
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
                             <StackPanel Margin="-12,0,0,0" Orientation="Vertical">

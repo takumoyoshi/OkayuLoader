@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Text.Json;
 
 namespace OkayuLoader.Services
@@ -8,7 +9,6 @@ namespace OkayuLoader.Services
     public class UiSettings
     {
         public string customOsuPath { get; set; }
-        public string customPatcherPath { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public bool isPatcherEnabled { get; set; }
@@ -20,7 +20,7 @@ namespace OkayuLoader.Services
 
     public class ConfigService
     {
-        const int reqVerisonConfig = 10;
+        const int reqVerisonConfig = 11;
 
         public void CreateConfigFile()
         {
@@ -36,7 +36,6 @@ namespace OkayuLoader.Services
             var uiSettings = new UiSettings
             {
                 customOsuPath = "",
-                customPatcherPath = "",
                 username = "",
                 password = "",
                 isPatcherEnabled = false,
@@ -48,7 +47,14 @@ namespace OkayuLoader.Services
             string jsonConfig = JsonSerializer.Serialize<UiSettings>(uiSettings);
 
             Directory.CreateDirectory(pathConfigFolder);
+
             File.WriteAllText(pathConfigFile, jsonConfig);
+            using (var client = new WebClient())
+            {
+                client.DownloadFile("http://osuokayu.moe/static/Osu!Patcher.zip", userFolderPath + "\\.OkayuLoader\\Osu!Patcher.zip");
+                System.IO.Compression.ZipFile.ExtractToDirectory(userFolderPath + "\\.OkayuLoader\\Osu!Patcher.zip", userFolderPath + "\\.OkayuLoader");
+                File.Delete(userFolderPath + "\\.OkayuLoader\\Osu!Patcher.zip");
+            }
         }
 
         public UiSettings Load()
